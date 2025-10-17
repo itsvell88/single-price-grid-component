@@ -1,0 +1,268 @@
+/* RESET DEFAULT STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    /* Container Level Colors */
+    --level1-con: 1.5px solid red;
+    --level2-con: 1.5px solid cyan;
+    --level3-con: 1.5px solid magenta;
+    --level4-con: 1.5px solid greenyellow;
+    --level5-con: 1.5px solid blue;
+
+    /* Color Palette */
+    --cp-teal500: hsl(179, 62%, 43%);
+    --cp-teal400: hsl(181, 41%, 54%);
+    --cp-green400: hsl(71, 73%, 54%);
+    --cp-teal100: hsl(204, 43%, 93%);
+    --cp-gray500: hsl(218, 22%, 67%);
+    --cp-neutralwhite: hsl(0, 0%, 98%);
+    --cp-shadowlight: hsl(179, 62%, 20%, 0.2);
+    --cp-shadowdark: hsl(179, 62%, 20%, 0.35);
+}
+
+/* BASE STYLE ---------------------------------------------------------------------------- */
+
+/* New Default Styling */
+body {
+    background-color: var(--cp-teal100);
+    min-height: 100vh;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Karla";
+}
+
+main {
+    /*outline: var(--level1-con); /* testing purpose */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: auto;
+}
+
+.content {
+    /*outline: var(--level2-con); /* testing purpose */
+    width: 82.5vw;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    font-size: 0.87rem;
+    border-radius: 0.3rem;
+    box-shadow: 0px 10px 20px 1px var(--cp-shadowlight);
+    margin: 8vh auto;
+    transition: width 0.2s ease;
+}
+
+.intro-con,
+.subs-con,
+.why-us-con {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em 1.5em;
+}
+
+.intro-con {
+    background-color: var(--cp-neutralwhite);
+    gap: 1.8em;
+}
+
+.intro-title {
+    color: var(--cp-teal500);
+    font-weight: 700;
+}
+
+.intro-subtitle {
+    color: var(--cp-green400);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5em;
+}
+
+.intro-body {
+    color: var(--cp-gray500);
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.8em;
+    margin-top: -1rem;
+}
+
+.subs-con {
+    background-color: var(--cp-teal500);
+    gap: 1.5em;
+}
+
+.subs-title {
+    color: var(--cp-neutralwhite);
+    font-size: 1.18rem;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8em;
+}
+
+.price {
+    color: var(--cp-neutralwhite);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.month {
+    color: hsl(0, 0%, 98%, 0.6);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.subs-body {
+    color: var(--cp-neutralwhite);
+    font-size: 1rem;
+    margin-top: -1rem;
+    margin-bottom: 0.8rem;
+}
+
+button {
+    border: none;
+    background-color: var(--cp-green400);
+    border-radius: 0.3rem;
+    box-shadow: 0px 6px 15px 1px var(--cp-shadowdark);
+    color: var(--cp-neutralwhite);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1em;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--cp-neutralwhite);
+    color: var(--cp-green400);
+    cursor: pointer;
+}
+
+.why-us-con {
+    background-color: var(--cp-teal400);
+    gap: 1.5em;
+}
+
+.why-us-title {
+    color: var(--cp-neutralwhite);
+    font-size: 1.18rem;
+}
+
+.why-us-body {
+    color: var(--cp-neutralwhite);
+    line-height: 1.5em;
+}
+
+footer {
+    /*outline: var(--level1-con); /* testing purpose */
+    background-color: var(--cp-gray500);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1em;
+    color: var(--cp-neutralwhite);
+}
+
+a {
+    color: var(--cp-green400);
+}
+
+a:hover {
+    color: var(--cp-neutralwhite);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* TABLET ---------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .content {
+        width: 40rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        transition: width 0.2s ease;
+    }
+
+    .intro-con {
+        grid-column: 1 / 3;
+    }
+
+    .intro-con,
+    .subs-con,
+    .why-us-con {
+        padding: 3.3em;
+    }
+
+    .intro-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .intro-body {
+        font-size: 1rem;
+        transition: font-size 0.2s ease;
+    }
+
+    .subs-title,
+    .why-us-title {
+        font-size: 1.3rem;
+    }
+
+    .subs-con {
+        gap: 1.75em;
+    }
+
+    .price {
+        font-size: 2.4rem;
+    }
+
+    .month {
+        font-size: 0.95rem;
+        transition: font-size 0.2s ease;
+    }
+
+    .subs-body {
+        font-size: 0.95rem;
+        transition: font-size 0.2s ease;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+
+    .why-us-body {
+        font-size: 1rem;
+    }
+}
+
+/* DESKTOP ---------------------------------------------------------------------------- */
+
+@media (min-width: 1024px) {
+    .content {
+        width: 45.85rem;
+    }
+
+    .intro-body {
+        font-size: 1.15rem;
+    }
+
+    .month {
+        font-size: 1.1rem;
+    }
+
+    .subs-body {
+        font-size: 1.1rem;
+    }
+}
